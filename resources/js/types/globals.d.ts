@@ -1,4 +1,5 @@
 import { AppPageProps } from '@/types/index';
+import ziggyRoute from 'ziggy-js';
 
 // Extend ImportMeta interface for Vite...
 declare module 'vite/client' {
@@ -22,5 +23,10 @@ declare module 'vue' {
         $inertia: typeof Router;
         $page: Page;
         $headManager: ReturnType<typeof createHeadManager>;
+        route: typeof ziggyRoute;
     }
+}
+
+declare global {
+    var route: typeof ziggyRoute;
 }

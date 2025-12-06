@@ -10,43 +10,37 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, TwoFactorAuthenticatable;
+    use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
+    protected $table = 'User'; // Tên bảng trong DB
+
+    const CREATED_AT = 'thoigiantao';
+    const UPDATED_AT = 'thoigiancapnhat';
+
     protected $fillable = [
-        'name',
+        'hoten',
+        'sdt',
         'email',
-        'password',
+        'pass_hash',
+        'vaitro'
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
-     */
     protected $hidden = [
-        'password',
-        'two_factor_secret',
-        'two_factor_recovery_codes',
-        'remember_token',
+        'pass_hash',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+    public function getAuthPassword()
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-            'two_factor_confirmed_at' => 'datetime',
-        ];
+        return $this->pass_hash;
+    }
+
+    public function donhangs()
+    {
+        return $this->hasMany(Donhang::class, 'user_id');
+    }
+
+    public function diachis()
+    {
+        return $this->hasMany(Diachi::class, 'user_id');
     }
 }
