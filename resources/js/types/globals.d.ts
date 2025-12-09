@@ -1,5 +1,7 @@
 import { AppPageProps } from '@/types/index';
 import ziggyRoute from 'ziggy-js';
+import Swal from 'sweetalert2';
+import type { SweetAlert } from 'sweetalert2';
 
 // Extend ImportMeta interface for Vite...
 declare module 'vite/client' {

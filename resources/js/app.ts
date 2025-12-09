@@ -6,6 +6,10 @@ import type { DefineComponent } from 'vue';
 import { createApp, h } from 'vue';
 import { initializeTheme } from './composables/useAppearance';
 import { ZiggyVue } from 'ziggy-js';
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css'
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
@@ -18,10 +22,13 @@ createInertiaApp({
             import.meta.glob<DefineComponent>('./pages/**/*.vue'),
         ),
     setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
-            .use(plugin)
-            .use(ZiggyVue)
-            .mount(el);
+        const app = createApp({ render: () => h(App, props) })
+            app.use(plugin)
+            app.use(ZiggyVue)
+            app.use(ElementPlus)
+            app.use(VueSweetalert2),
+            app.mount(el);
+            
     },
     progress: {
         color: '#4B5563',

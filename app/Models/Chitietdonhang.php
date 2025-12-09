@@ -11,7 +11,7 @@ class Chitietdonhang extends Model
 
     protected $fillable = [
         'donhang_id',
-        'bienthe_id',
+        'sanpham_id',
         'soluong',
         'giagoc'
     ];
@@ -21,8 +21,8 @@ class Chitietdonhang extends Model
         return $this->belongsTo(Donhang::class, 'donhang_id');
     }
 
-    public function bienthe()
+    public function sanpham()
     {
-        return $this->belongsTo(Bienthe::class, 'bienthe_id');
+        return $this->belongsTo(Sanpham::class, 'sanpham_id');
     }
 }

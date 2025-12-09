@@ -16,9 +16,16 @@ class AdminAuthController extends Controller
 
     public function login(Request $request)
     {
-        if (Auth::attempt(['email' => $request->email, 'pass_hash' => $request->pass_hash, Auth::user()->vaitro === 'admin'])) {
+        $thongtin = [
+            'email' => $request->email,
+            'password' => $request->pass_hash,
+            'vaitro' => 'admin'
+        ];
+        if (Auth::attempt($thongtin)) {
+            $request->session()->regenerate();
             return redirect()->route('admin.dashboard');
         }
+
 
         return redirect()->route('admin.login')->with('error', 'Sai thông tin đăng nhập.');
     }

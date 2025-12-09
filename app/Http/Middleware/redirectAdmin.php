@@ -18,5 +18,6 @@ class redirectAdmin
     {
         if (Auth::guard($guard)->check() && Auth::user()->vaitro === 'admin')
             return redirect()->route('admin.dashboard');
+        return $next($request);
     }
 }

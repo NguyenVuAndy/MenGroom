@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Thuonghieu extends Model
 {
     protected $table = 'Thuonghieu';
-    protected $timestamps = false;
-    protected $fillable = ['tenthunghieu', 'logo_url', 'mota_thuonghieu'];
+    public $timestamps = false;
+    protected $fillable = ['tenthuonghieu', 'logo_url', 'mota_thuonghieu'];
 
     public function sanphams()
     {
