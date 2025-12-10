@@ -50,6 +50,11 @@ class Sanpham extends Model
         return $this->hasMany(Chitietdonhang::class, 'sanpham_id');
     }
 
+    public function giohangs()
+    {
+        return $this->hasMany(Giohang::class, 'sanpham_id');
+    }
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()

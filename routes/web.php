@@ -2,15 +2,24 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SanphamController;
+use App\Http\Controllers\User\GiohangController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Settings\ProfileController;
 
 //user
+Route::get('/', [UserController::class, 'index'])->name('home');
 
-Route::get('/', [UserController::class, 'index'])->name('user.home');
+// giỏ hàng
+Route::prefix('giohang')->controller(GiohangController::class)->group(function () {
+    Route::get('view', 'view')->name('giohang.view');
+    Route::post('store/{sanpham}', 'store')->name('giohang.store');
+    Route::patch('update/{sanpham}', 'update')->name('giohang.update');
+    Route::delete('delete/{sanpham}', 'delete')->name('giohang.delete');
+});
 
 
 // admin

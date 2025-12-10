@@ -3,10 +3,11 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
-use Illuminate\support\Facades\Hash;
+
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -28,12 +29,14 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
+            'sdt' => ['required', 'string', 'max:12', 'unique:User,sdt'],
             'password' => $this->passwordRules(),
         ])->validate();
 
         return User::create([
             'hoten' => $input['name'],
             'email' => $input['email'],
+            'sdt' => $input['sdt'],
             'pass_hash' => Hash::make($input['password']),
         ]);
     }
