@@ -1,6 +1,6 @@
 <template>
     <footer
-        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-default shadow-sm md:flex md:items-center md:justify-between md:p-6">
+        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-gray-900 border-t border-default shadow-sm md:flex md:items-center md:justify-between md:p-6">
         <span class="text-sm text-body sm:text-center">© 2023 <a href="https://flowbite.com/"
                 class="hover:underline">Flowbite™</a>. All Rights Reserved.
         </span>

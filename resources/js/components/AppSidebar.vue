@@ -23,6 +23,21 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
+    {
+        title: 'Sản phẩm',
+        href: '/admin/sanphams',
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Loại sản phẩm',
+        href: '/admin/loaisps',
+        icon: LayoutGrid,
+    },
+    {
+        title: 'Thương hiệu',
+        href: '/admin/thuonghieus',
+        icon: LayoutGrid,
+    },
 ];
 
 const footerNavItems: NavItem[] = [

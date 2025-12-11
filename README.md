@@ -6,8 +6,8 @@ Tài liệu này hướng dẫn chi tiết cách cài đặt môi trường và 
 
 Trước khi chạy được code, máy tính của bạn cần cài đặt 3 công cụ sau. Nếu đã có rồi thì bỏ qua bước này.
 
-1. **XAMPP** (Để chạy PHP và Database MySQL):  
-   * Tải tại: [apachefriends.org](https://www.apachefriends.org/)  
+1. **WAMP** (Để chạy PHP và Database MySQL):  
+   * Tải tại: [wampserver.com](https://wampserver.com/en/download-wampserver-64bits/)  
    * Cài đặt xong, mở **XAMPP Control Panel** và bấm nút **Start** ở 2 dòng: Apache và MySQL.  
 2. **Composer** (Để tải các thư viện cho PHP):  
    * Tải tại: [getcomposer.org](https://getcomposer.org/)  

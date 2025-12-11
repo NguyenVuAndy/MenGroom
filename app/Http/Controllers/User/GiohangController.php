@@ -38,7 +38,6 @@ class GiohangController extends Controller
                 return redirect()->back();
             }
         }
-        // return Inertia::render('User/Giohang');
     }
 
     function store(Request $request, Sanpham $sanpham)

@@ -87,10 +87,31 @@ class GiohangHelper
 
     public static function getSPGioHang()
     {
+
         $gioHang = self::getGioHang();
+
         $ids = Arr::pluck($gioHang, 'sanpham_id');
+
         $sanphams = Sanpham::whereIn('id', $ids)->get();
+
         $gioHang = Arr::keyBy($gioHang, 'sanpham_id');
+
         return [$sanphams, $gioHang];
+
     }
+
+
+
+    public static function clearCart()
+    {
+
+        if ($user = auth()->user()) {
+
+            Giohang::whereUserId($user->id)->delete();
+
+        }
+
+    }
+
 }
+

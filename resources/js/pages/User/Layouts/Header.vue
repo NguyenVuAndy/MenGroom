@@ -13,7 +13,7 @@ const gioHang = computed(() => {
 </script>
 
 <template>
-    <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-default">
+    <nav class="bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-default">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <Link :href="route('home')" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="https://flowbite.com/docs/images/logo.svg" class="h-7" alt="Flowbite Logo" />
@@ -66,7 +66,7 @@ const gioHang = computed(() => {
 
 
                 <!-- Dropdown menu -->
-                <div class="z-50 hidden bg-white border border-default-medium rounded-base shadow-lg w-44"
+                <div class="z-50 hidden bg-gray-500 border border-default-medium rounded-base shadow-lg w-44"
                     id="user-dropdown">
                     <div class="px-4 py-3 text-sm border-b border-default">
                         <span class="block text-heading font-medium">Joseph McFall</span>
